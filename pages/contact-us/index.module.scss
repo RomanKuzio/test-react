@@ -1,0 +1,88 @@
+.contactUsWrapper{
+  min-height: 100vh;
+  // height: 100%;
+  background-color: #fff;
+  background: no-repeat url('../../public/images/contactUsBg.png') ;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-top: 6%;
+  .content{
+    padding:  6.25rem 12.185rem 3.125rem;
+    width: 75%;
+    height: 80%;
+    background: #fff;
+
+    .formSection{
+      display: flex;
+      flex-direction: column;
+
+
+      .title{
+        color: #000E1C;
+        font-weight: 600;
+        font-size: 2.5rem;
+        line-height: 3.375rem; 
+      }
+
+      .subtitle{
+        color: #575F6A;
+        opacity: 0.6;
+        font-weight: 400;
+        font-size: 1.25rem;
+        line-height: 2.25rem;
+        margin-bottom: 1.25rem;
+      }
+
+
+      .contactForm{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: flex-end;
+        .button{
+          margin-top: 2.875rem;
+          margin-left: auto;
+          
+        }
+      }
+    }
+
+    .locationWrapper{
+      display: flex;
+      justify-content: space-between;
+      
+      width: 76%;
+      margin-top: 6.25rem;
+      // background: red;
+      img{  width: 30%;
+        height: 40%;
+      }
+      .infoWrapper{
+        display: flex;
+        
+        flex-direction: column;
+        >span{
+          line-height: 1.7rem;
+          font-weight: 400;
+          color: #000E1C;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .contactUsWrapper{
+      
+      .content{
+        padding:  6.25rem 10.185rem 3.125rem;
+        
+        width: 85%;
+        .locationWrapper{
+          width: 90%;
+        }
+      } 
+  }
+}

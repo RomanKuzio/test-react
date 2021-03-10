@@ -1,0 +1,117 @@
+.homeWrapper{
+    background-color: #000E1C;
+    padding: 0 10% 10% 10%;
+    height: 120vh;
+    .mainSection{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+   
+        height: 90%;
+        // width: 100vw;
+        
+        .descriptionWrapper{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            font-family: 'Sarabun' sans-serif;
+            color: #fff;
+            .title{
+                font-weight: 600;
+                font-size: 5em;
+                line-height: 6rem;
+            }
+            .subtitle{
+                font-weight: 400;
+                font-size: 1rem;
+                margin-top: 10px;
+                line-height: 2rem;
+            }
+
+            .description{
+                margin-top: 3.9rem;
+                font-weight: 500;
+                opacity: 0.6;
+                font-size: 1.45rem;
+                line-height: 2em;
+            }
+
+            .button{
+                margin-top: 4rem;
+            }
+
+        
+        }
+        .videoWrapper{
+            overflow: hidden;        
+            object-fit: contain;
+            position: relative;
+            overflow: visible;
+            margin-top: 10px;
+            width: 53%; 
+            height: 90%;           
+            .video{
+                object-fit: fill;
+                border-radius: 80px 80px 0 80px;
+                width: 100%;
+                height: 100%;
+            }
+
+            .serveBlock{
+                padding: 30px 30px 36px 30px;
+                border-radius: 6px;
+                bottom: 128px;
+                left: -40px;
+                position: absolute;
+                width: 35%;
+                height: 40%;
+                
+                max-width: 252px;
+                max-height: 252px;
+                background-color: #fff;
+                z-index: 1;
+                box-shadow: 0px 22px 44px rgba(49, 56, 91, 0.1);
+               
+                
+            }
+        }
+
+       
+    }
+    .companiesWrapper{
+        margin-top: 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logoWrapper{
+            width: 12%;
+            height: 47px;
+            >img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .homeWrapper{
+        padding: 0 7% 10%;
+        .mainSection{
+            .descriptionWrapper{
+                .title{
+                    font-weight: 600;
+                    font-size: 4em;
+                    line-height: 6rem;
+                }
+            }
+            .videoWrapper{
+                
+                height: 72%; 
+                
+                
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.progressIndicatorWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .counter{
+        font-weight: 200;
+        font-size: 5.3rem;
+        margin-top: -90px;
+        color: #000E1C;
+        >span{
+            font-size: 2.5rem;
+            font-weight: 200;
+        }
+    }
+
+    .description{
+        margin-top: -10px;
+        color: #000E1C;
+        font-weight: 400;
+        font-size: 1rem;
+        text-align: center;
+        white-space: pre-wrap;;
+        >span{
+            font-weight: 500;
+            color: #1a8bf4;
+        }
+    }
+}

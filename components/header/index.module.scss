@@ -1,0 +1,50 @@
+.headerWrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #000E1C;
+  padding: 42px 10% 15px;
+  color: #ffffff;
+  z-index: 9999;
+  .logo{
+    width: 140px;
+    object-fit: contain;
+  }
+
+  .contactSection{
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .phoneNumber{
+        color: #ffffff;
+        opacity: 0.7;
+    }
+    
+    .contactButton{
+      border: 2px solid #FFFFFF;
+      background-color: #000E1C;
+      
+      width: 38%;
+      height: 46px;
+      >p{
+        color: #ffffff;
+        
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .headerWrapper{
+      padding: 42px 7% 42px;
+      .contactSection{
+        width: 30%;
+        .contactButton{
+          
+          width: 35%;
+        }
+      }
+  }
+}
