@@ -45,23 +45,10 @@ const VideoSectionContent = () => {
               dataStyle={styles.indicatorData}
               descriptionStyle={styles.indicatorDescription}
             />
-            <ProgressIndicator
-              withMargin
-              count="100"
-              percentage={60}
-              nomination="M"
-              description={[
-                "100 Million",
-                "",
-                "in Property Tax\nExemption Savings",
-              ]}
-              dataStyle={styles.indicatorData}
-              descriptionStyle={styles.indicatorDescription}
-            />
           </div>
         </div>
         <div className={styles.rightSide}>
-          {/* <img src="images/playIcon.png" /> */}
+          <img src="images/playIcon.png" />
         </div>
       </div>
     </div>

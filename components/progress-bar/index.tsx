@@ -42,7 +42,7 @@ const ProgressIndicator = ({ ...props }: IProps) => {
   return (
     <div
       className={styles.progressIndicatorWrapper}
-      style={{ marginRight: withMargin ? 75 : 0 }}
+      style={{ marginRight: withMargin ? 25 : 0 }}
     >
       {/* <CircularProgressbar value={percentage} text={`${percentage}%`} className={styles.bar} />; */}
       <SemiCircleProgressBar
