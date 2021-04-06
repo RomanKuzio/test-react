@@ -2,6 +2,7 @@
 
 html,
 body {
+  overflow-x: hidden;
   padding: 0;
   margin: 0;
   font-family: 'Sarabun';
@@ -35,6 +36,7 @@ img {
 button{
   background-color: #198BF4;
   border: 2px solid #198BF4;
+  border-radius: 2px;
   color: #fff;
   width: 260px;
   height: 60px;
@@ -45,9 +47,34 @@ button{
       font-weight: 400;
   }
 }
+@media screen and (min-width: 2400px) {
+  html{
+    font-size: 120%;
+  }
+}
 
-@media screen and (max-width: 1660px) {
+@media screen and (max-width: 1700px) and (min-width: 1150px) {
   html{
     font-size: 90%;
+  }
+}
+
+
+@media screen and (max-width: 1150px) {
+  html{
+    font-size: 80%;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  html{
+    font-size: 100%;
+  }
+}
+
+
+@media screen and (max-width: 490px) {
+  html{
+    font-size: 85%;
   }
 }

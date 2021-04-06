@@ -5,24 +5,26 @@ const LocationContainer = () => {
     <div className={styles.locationWrapper}>
       <img src='images/map.png' />
       <div className={styles.infoWrapper}>
-        <span>
-          1115 Brodway, 10th Floor
+        <div className={styles.infoBlock}>
+          <span>
+            1115 Brodway, 10th Floor
         </span>
-        <span>
-          New York, NY 10010,(p)
+          <span>
+            New York, NY 10010,(p)
         </span>
-        <span>
-          212.571.3003
+          <span>
+            212.571.3003
         </span>
-      </div>
-      <div className={styles.infoWrapper}>
-        <span>
-          490 433 94 9993
+        </div>
+        <div className={styles.infoBlock}>
+          <span>
+            490 433 94 9993
         </span>
-        <span>
-          info@example.com
+          <span>
+            info@example.com
         </span>
 
+        </div>
       </div>
     </div>
   )

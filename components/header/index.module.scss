@@ -1,12 +1,22 @@
+.scrollDown{
+  top: -120px
+}
+
+.scrollTop{
+  top: 0;
+}
+
 .headerWrapper{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
   width: 100%;
   background-color: #000E1C;
   padding: 42px 10% 15px;
   color: #ffffff;
   z-index: 9999;
+  transition: top 0.6s ease-in-out;
   .logo{
     width: 140px;
     object-fit: contain;
@@ -22,6 +32,10 @@
         opacity: 0.7;
     }
     
+    .searchIcon{
+      width: 18px;
+    }
+
     .contactButton{
       border: 2px solid #FFFFFF;
       background-color: #000E1C;
@@ -33,6 +47,50 @@
         
       }
     }
+  }
+
+  .ham {
+    margin-left: -10px;
+    width: 45px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .hamRotate.active {
+    transform: rotate(45deg);
+  }
+  .hamRotate180.active {
+    transform: rotate(180deg);
+  }
+  .line {
+    fill:none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke:#fff;
+    stroke-width:4px;
+    stroke-linecap:round;
+  }
+  .ham1 .top {
+    stroke-dasharray: 40 139;
+  }
+  .ham1 .bottom {
+    stroke-dasharray: 20 180;
+  }
+  .ham1 .middle {
+    stroke-dasharray: 30 180;
+  }
+  .ham1.active .top {
+    stroke-dashoffset: -98px;
+  }
+  .ham1.active .bottom {
+    stroke-dashoffset: -138px;
+  }
+
+  .ham1.active .middle {
+    stroke-dasharray: 40 180;
   }
 }
 
@@ -46,5 +104,54 @@
           width: 35%;
         }
       }
+  }
+}
+
+@media screen and (max-width: 1124px) {
+  .headerWrapper{
+    
+      .contactSection{
+        width: 35%;
+        .contactButton{
+          
+          width: 40%;
+        }
+      }
+  }
+}
+
+@media screen and (max-width: 815px) {
+  .headerWrapper{
+      .contactSection{
+        width: 50%;
+        .contactButton{
+          
+          width: 45%;
+        }
+      }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .headerWrapper{
+      .logo{
+        width: 125px;
+        object-fit: contain;
+      }
+      .contactSection{
+        width: 10%;
+        .contactButton{
+          
+          width: 45%;
+        }
+      }
+  }
+}
+
+@media screen and(max-width: 375px){
+  .headerWrapper{
+    .logo{
+      width: 95px;
+    }
   }
 }

@@ -46,6 +46,7 @@
     .info{
       display: flex;
       flex-direction: column;
+     
       >span{
         &:first-of-type{
           opacity: 1;
@@ -80,6 +81,126 @@
     }
     // background: red;
   }
+}
+
+@media screen and (max-width: 1350px){
+  .footerWrapper{
+    // padding: 5% 10% 0 ;
+    .topSection{
+      .contactSection{
+        // display: flex;
+        width: 30%;
+        // justify-content: space-between;
+        // align-items: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1150px){
+  .footerWrapper{
+    .topSection{
+      .contactSection{
+        width: 35%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 850px){
+  .footerWrapper{
+    .topSection{
+      .contactSection{
+        width: 45%;
+      }
+    }
+  }
+}
 
 
+@media screen and (max-width: 662px){
+  .footerWrapper{
+    padding: 0;
+
+    .topSection{
+      .contactSection{
+        width: 70%;
+        >span:nth-child(2){
+          display: none;
+        }
+
+        
+        
+        .imageContainer{
+          width: 24px;
+          height: 24px;
+        }
+        
+      }
+    }
+    .infoWrapper{
+      padding:  0px 7% 0;
+      flex-direction: column;
+       summary{
+        font-weight: normal;
+        margin-bottom: 0.6875rem;
+        line-height: 1,6875rem;
+        color: #fff;
+        opacity: 0.75;
+        opacity: 1;
+        font-weight: 600;
+        line-height: 1,875rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &::-webkit-details-marker {
+          display: none;
+        }
+
+        &:focus{
+          outline: none;
+        }
+      }
+      .info{
+        >span{
+          padding: 2.5px 0;
+          &:first-of-type{
+            font-weight: normal;
+            margin-bottom: 0.6875rem;
+            line-height: 1,6875rem;
+            color: #fff;
+            opacity: 0.75;
+            
+          }
+          font-size: 0.9rem;
+    
+        }
+  
+      }
+    }
+    .topSection{
+      .contactSection{
+        width: 45%;
+      }
+    }
+
+    .bottomSection{
+      text-align: center;
+      padding: 1rem 0 1rem 0;
+    }
+  }
+}
+
+
+@media screen and (max-width: 375px){
+  .footerWrapper{
+    .topSection{
+      padding:  23px 25px;
+      .contactSection{
+        width: 45%;
+      }
+    }
+  }
 }

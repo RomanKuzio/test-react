@@ -8,7 +8,7 @@ const TextArea = ({ ...props }: IProps) => {
   return (
     <div className={styles.textAreaWrapper}>
       <span>{title}</span>
-      <textarea placeholder={placeholder} className={styles.textArea} rows={4} >sdf</textarea>
+      <textarea placeholder={placeholder} className={styles.textArea} rows={4} ></textarea>
     </div>
 
   )

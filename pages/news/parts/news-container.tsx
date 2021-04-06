@@ -1,4 +1,4 @@
-import { INewsProps } from '../content'
+import { INewsProps } from '../../../constants'
 import styles from '../index.module.scss'
 
 interface IProps {
