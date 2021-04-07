@@ -1,50 +1,50 @@
-.scrollDown{
-  top: -120px
+.scrollDown {
+  top: -120px;
 }
 
-.scrollTop{
+.scrollTop {
   top: 0;
 }
 
-.headerWrapper{
+.headerWrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   width: 100%;
-  background-color: #000E1C;
+  background-color: #000e1c;
   padding: 42px 10% 15px;
   color: #ffffff;
   z-index: 9999;
   transition: top 0.6s ease-in-out;
-  .logo{
+  left: 0;
+  .logo {
     width: 140px;
     object-fit: contain;
   }
 
-  .contactSection{
+  .contactSection {
     width: 25%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .phoneNumber{
-        color: #ffffff;
-        opacity: 0.7;
+    .phoneNumber {
+      color: #ffffff;
+      opacity: 0.7;
     }
-    
-    .searchIcon{
+
+    .searchIcon {
       width: 18px;
     }
 
-    .contactButton{
-      border: 2px solid #FFFFFF;
-      background-color: #000E1C;
-      
+    .contactButton {
+      border: 2px solid #ffffff;
+      background-color: #000e1c;
+
       width: 38%;
       height: 46px;
-      >p{
+      > p {
         color: #ffffff;
-        
       }
     }
   }
@@ -67,11 +67,11 @@
     transform: rotate(180deg);
   }
   .line {
-    fill:none;
+    fill: none;
     transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-    stroke:#fff;
-    stroke-width:4px;
-    stroke-linecap:round;
+    stroke: #fff;
+    stroke-width: 4px;
+    stroke-linecap: round;
   }
   .ham1 .top {
     stroke-dasharray: 40 139;
@@ -95,62 +95,57 @@
 }
 
 @media screen and (max-width: 1440px) {
-  .headerWrapper{
-      padding: 42px 7% 42px;
-      .contactSection{
-        width: 30%;
-        .contactButton{
-          
-          width: 35%;
-        }
+  .headerWrapper {
+    padding: 42px 7% 42px;
+    .contactSection {
+      width: 30%;
+      .contactButton {
+        width: 35%;
       }
+    }
   }
 }
 
 @media screen and (max-width: 1124px) {
-  .headerWrapper{
-    
-      .contactSection{
-        width: 35%;
-        .contactButton{
-          
-          width: 40%;
-        }
+  .headerWrapper {
+    .contactSection {
+      width: 35%;
+      .contactButton {
+        width: 40%;
       }
+    }
   }
 }
 
 @media screen and (max-width: 815px) {
-  .headerWrapper{
-      .contactSection{
-        width: 50%;
-        .contactButton{
-          
-          width: 45%;
-        }
+  .headerWrapper {
+    .contactSection {
+      width: 50%;
+      .contactButton {
+        width: 45%;
       }
+    }
   }
 }
 
 @media screen and (max-width: 680px) {
-  .headerWrapper{
-      .logo{
-        width: 125px;
-        object-fit: contain;
+  .headerWrapper {
+    .logo {
+      width: 125px;
+      object-fit: contain;
+    }
+    .contactSection {
+      width: 10%;
+      .contactButton {
+        width: 45%;
       }
-      .contactSection{
-        width: 10%;
-        .contactButton{
-          
-          width: 45%;
-        }
-      }
+    }
   }
 }
 
-@media screen and(max-width: 375px){
-  .headerWrapper{
-    .logo{
+@media screen and(max-width: 375px) {
+  .headerWrapper {
+    .logo {
       width: 95px;
     }
   }

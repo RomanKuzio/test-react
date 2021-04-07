@@ -1,17 +1,22 @@
-import styles from './index.module.scss'
+import styles from "./index.module.scss";
 interface IProps {
-  title: string,
-  placeholder: string
+  title: string;
+  placeholder: string;
+  onChange: (e: any) => void;
 }
 const TextArea = ({ ...props }: IProps) => {
-  const { title, placeholder } = props
+  const { title, placeholder, onChange } = props;
   return (
     <div className={styles.textAreaWrapper}>
       <span>{title}</span>
-      <textarea placeholder={placeholder} className={styles.textArea} rows={4} ></textarea>
+      <textarea
+        placeholder={placeholder}
+        className={styles.textArea}
+        rows={4}
+        onChange={onChange}
+      ></textarea>
     </div>
+  );
+};
 
-  )
-}
-
-export default TextArea
+export default TextArea;

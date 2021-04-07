@@ -1,20 +1,27 @@
-import styles from './index.module.scss'
+import styles from "./index.module.scss";
 
 interface IProps {
-  title: string
+  title: string;
+  placeholder: string;
+  name: string;
+  onChange: (e: any) => void;
 }
 
 const Input = ({ ...props }: IProps) => {
-  const { title } = props
+  const { title, placeholder, name, onChange } = props;
 
   return (
     <div className={styles.inputWrapper}>
       <span>{title}</span>
-      <input className={styles.input} type='dropdown' />
+      <input
+        onChange={onChange}
+        name={name}
+        className={styles.input}
+        placeholder={placeholder}
+        type="dropdown"
+      />
     </div>
+  );
+};
 
-
-  )
-}
-
-export default Input
+export default Input;
