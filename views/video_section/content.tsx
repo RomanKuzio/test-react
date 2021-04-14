@@ -28,7 +28,7 @@ const VideoSectionContent = () => {
           <span className={styles.description}>
             NYC Real Estate Compliance made easy with Compliance Automation,
             case management, and comprehensive reporting. Schedule a Demo or to
-            find out whats happening, check out the Blog.
+            find out whats happening, check out our Latest News.
           </span>
           <Button
             style={styles.button}
@@ -74,21 +74,29 @@ const VideoSectionContent = () => {
               />
             )}
           </div>
-          {width < 680 && (
-            <ProgressIndicator
-              withMargin
-              count="100"
-              percentage={60}
-              nomination="M"
-              description={[
-                "100 Million",
-                "",
-                "in Property Tax\nExemption Savings",
-              ]}
-              dataStyle={styles.indicatorData}
-              descriptionStyle={styles.indicatorDescription}
-            />
-          )}
+          <div
+            className={styles.indicatorsWrappers}
+            style={{
+              justifyContent: "center",
+              marginTop: 0,
+              paddingLeft: width > 680 ? 75 : 25,
+            }}
+          >
+            {width < 680 && (
+              <ProgressIndicator
+                count="100"
+                percentage={60}
+                nomination="M"
+                description={[
+                  "100 Million",
+                  "",
+                  "in Property Tax\nExemption Savings",
+                ]}
+                dataStyle={styles.indicatorData}
+                descriptionStyle={styles.indicatorDescription}
+              />
+            )}
+          </div>
         </div>
         <div className={styles.rightSide}>
           {/* <img src="images/playIcon.png" /> */}

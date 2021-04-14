@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@200;300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sarabun:wght@200;300;400;500;600;700;800&display=swap");
 
 html,
 body {
   overflow-x: hidden;
   padding: 0;
   margin: 0;
-  font-family: 'Sarabun';
+  font-family: "Sarabun";
   font-weight: 500;
   line-height: 1.6;
-  background-color: #000E1C;
+  background-color: #000e1c;
   font-size: 100%;
   position: relative;
   -webkit-font-smoothing: antialiased;
@@ -32,49 +32,49 @@ img {
   display: block;
 }
 
-
-button{
-  background-color: #198BF4;
-  border: 2px solid #198BF4;
+button {
+  background-color: #198bf4;
+  border: 2px solid #198bf4;
   border-radius: 2px;
   color: #fff;
   width: 260px;
   height: 60px;
   cursor: pointer;
-  >p{
-      margin: 0;
-      font-size: 1rem;
-      font-weight: 400;
+  > p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  &:focus {
+    outline: none;
   }
 }
 @media screen and (min-width: 2400px) {
-  html{
+  html {
     font-size: 120%;
   }
 }
 
 @media screen and (max-width: 1700px) and (min-width: 1150px) {
-  html{
+  html {
     font-size: 90%;
   }
 }
 
-
 @media screen and (max-width: 1150px) {
-  html{
+  html {
     font-size: 80%;
   }
 }
 
 @media screen and (max-width: 680px) {
-  html{
+  html {
     font-size: 100%;
   }
 }
 
-
 @media screen and (max-width: 490px) {
-  html{
+  html {
     font-size: 85%;
   }
 }

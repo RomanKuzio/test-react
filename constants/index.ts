@@ -3,6 +3,7 @@ export interface IServiceProps {
   title: string;
   description: string;
   additionalData: string[];
+  additionalData2?: string[][];
   bottomSection?: boolean;
 }
 
@@ -25,12 +26,12 @@ export const servicesList: IServiceProps[] = [
       "Property Tax Exemptions and Abatements incentives calculations are an important part of the financial analysis of a new construction or a rehabilitation development. Whether it is a residential, commercial, or a mixed-use project, our office can offer advisory services to find the tax benefits that would offer the greatest savings available for your development.",
     title: "NYC Property Tax Incentives & Benefits",
     additionalData: [
-      "421-a(16) Affordable Housing New York (AHNYP) Program",
-      "Industrial & Commercial Abatement (ICAP) Program",
+      "421-a(16) Affordable Housing New York Program (AHNYP)",
+      "Industrial & Commercial Abatement Program (ICAP)",
       "J-51 Tax Exemption Program",
-      "421-a (15) Tax Exemption Reinstatement",
-      "Project Eligility Review & Analysis",
-      "Financing Opinion Letter",
+      "Tax Benefits Reinstatement",
+      "Project's Tax Benefits Eligibility Analysis",
+      "Tax Benefits Opinion Letters",
     ],
     bottomSection: true,
   },
@@ -38,11 +39,11 @@ export const servicesList: IServiceProps[] = [
     logo: "images/services/2.png",
     description:
       "Inclusionary Housing program was created to promote affordable housing in the areas where zoning has been modified to encourage new development. The program offers developers additional bonus square footage as known as FAR in return for creating affordable housing units. Our office helps to maximize the benefits of providing affordable housing and increase the return on investment under NYC’s rezoning requirement. ",
-    title: "Inclusionary & Senior Housing",
+    title: "Inclusionary Housing",
     additionalData: [
-      "Mandatory Inclusionary Housing Program (VIH)",
-      "Voluntary Inclusionary Housing Program",
-      "Unit Mix Review & Analysis",
+      "Mandatory Inclusionary Housing Program (MIH)",
+      "Voluntary Inclusionary Housing Program (VIH)",
+      "Inclusionary Housing Units Allocation",
       "Affordable Independent Residence for Seniors  (AIRS)",
     ],
   },
@@ -53,23 +54,19 @@ export const servicesList: IServiceProps[] = [
     title: "Affordable Housing Marketing, Lease-up & Monitoring",
     additionalData: [
       "HPD Marketing Agent for Affordable Housing NY",
-      "HPD Marketing Agent for Inclusionary Housing ",
-      "ICAP",
-      "J51",
+      "HPD Marketing Agent for Inclusionary Housing",
+      "HDC Marketing Agent for HOME & LITHC",
+      "Initial tenant Selection & Approval",
+      "Affordable Housing Monitoring",
+      "Administering Agent Service through Rentability",
     ],
   },
   {
-    logo: "images/services/2.png",
+    logo: "images/services/4.png",
     description:
       "New York State Home and Community Renewal (HCR) is the state agency responsible for implementing the laws and regulations that govern rent controlled and rent stabilized tenancies. Our DHCR professional represents property owners in various proceedings with this agency.",
     title: "New York State DHCR",
     additionalData: [
-      "Initial and Annual Rent Registrations and Amendments",
-      "Substantial Rehabilitation Exemtion Application",
-      "High Rent Vacancy Exemption Application",
-      "DHCR compliance & case management",
-      "Rent-regulated building management",
-      "Overcharge Complaints",
       "Initial and Annual Rent Registrations and Amendments",
       "Substantial Rehabilitation Exemtion Application",
       "High Rent Vacancy Exemption Application",
@@ -82,18 +79,49 @@ export const servicesList: IServiceProps[] = [
   {
     logo: "images/services/5.png",
     description:
-      "Our violation removal specialists are highly skilled professionals who represent our clients for violations issued by the DOB, FDNY, DSNY, DOT, NYPD, DEP, DOH, DOHMH, Landmark Preservation and HPD agencies.",
+      "Our violation removal specialists are highly skilled professionals who represent our clients for violations issued by\nthe DOB, FDNY, DSNY, DOT, NYPD, DEP, DOH, DOHMH, Landmark Preservation and HPD agencies.",
     title: "Violations",
     additionalData: [
       "OATH Hearing appearances on ECB violations",
       "Certificate of Correction for DOB and FDNY violations",
-      "DOB Violation Removal for Elevator, AEU HAZ, Boiler, Construction ...",
+      "DOB Violation Removal for Elevator, AEU HAZ, Boiler, Construction ... ",
+      "Civil Penalty Refund for HAZ, Work Without Permit (WWP) ...",
+      "Full and Partial Vacate Order Removal ...",
+      "Full and Partial Stop Work Order ...",
       "HPD Violation Removal",
       "Civil Penalty Refund for HAZ, Work Without Permit (WWP) ...",
       "L2 filing for Civil Penalty Waiver, Refund and Reduction",
+      "Violation Retrieval",
+      "ECB Appeals",
       "HPD Judgment Settlement",
       "AEP, PPI, and LL6 Program Resolution",
-      "AEP, PPI, and LL6 Program Resolution",
+      "HPD Judgment Settlement",
+      "LP Removal and Dismissal",
+      "DEP Cease and Desist Hearing",
+    ],
+    additionalData2: [
+      [
+        "OATH Hearing appearances on ECB violations",
+        "Certificate of Correction for DOB and FDNY violations",
+        "DOB Violation Removal for Elevator, AEU HAZ, Boiler, Construction ... ",
+        "Civil Penalty Refund for HAZ, Work Without Permit (WWP) ...",
+        "AEP, PPI, and LL6 Program Resolution",
+      ],
+      [
+        "Full and Partial Vacate Order Removal ...",
+        "Full and Partial Stop Work Order ...",
+        "HPD Violation Removal",
+        "Civil Penalty Refund for HAZ, Work Without Permit (WWP) ...",
+        "HPD Judgment Settlement",
+      ],
+      [
+        "L2 filing for Civil Penalty Waiver, Refund and Reduction",
+        "Violation Retrieval",
+        "ECB Appeals",
+        "HPD Judgment Settlement",
+        "LP Removal and Dismissal",
+        // "DEP Cease and Desist Hearing",
+      ],
     ],
   },
 ];
@@ -144,7 +172,7 @@ export const footerData: IFooterDataProps[] = [
   },
   {
     header: "Inclusionary Housing",
-    data: ["Mandatory and Voluntary...", "Affordable Housing", "ICAP"],
+    data: ["Mandatory and Voluntary...", "Affordable Housing", "ICAP", "J51"],
   },
   {
     header: "Affordable Housing Marketing",
@@ -172,7 +200,7 @@ export const footerData: IFooterDataProps[] = [
       "ECB Settlement",
       "DSNY,DON,DOT,DEP",
       "FDNY",
-      "Obtain records from city",
+      "Obtain records from city...",
     ],
   },
 ];

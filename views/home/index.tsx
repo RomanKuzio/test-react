@@ -1,13 +1,13 @@
-import Button from '../../components/button'
-import HomeContent from './content'
-import styles from './index.module.scss'
+import Button from "../../components/button";
+import HomeContent from "./content";
+import styles from "./index.module.scss";
 
-const Home = () => {
+const Home = ({ scrollToContactUs }: { scrollToContactUs: () => void }) => {
   return (
     <>
-      <HomeContent />
+      <HomeContent scrollToContactUs={scrollToContactUs} />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

@@ -7,15 +7,21 @@ import ContactUs from "../views/contact-us";
 import Footer from "../components/footer";
 
 export default function Home() {
+  const scrollToContactUs = () => {
+    const element = document.getElementById("contact_us");
+
+    element.scrollIntoView({ block: "start", behavior: "smooth" });
+  };
+
   return (
     <>
-      <Header />
-      <HomePage />
+      <Header scrollToContactUs={scrollToContactUs} />
+      <HomePage scrollToContactUs={scrollToContactUs} />
       <Services />
       <VideoSectionContent />
       <News />
       <ContactUs />
-      <Footer />
+      <Footer scrollToContactUs={scrollToContactUs} />
     </>
   );
 }

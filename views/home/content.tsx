@@ -3,7 +3,11 @@ import styles from "./index.module.scss";
 import VideoContainer from "./parts/video-container";
 import CompaniesContainer from "./parts/companies-container";
 import { useEffect, useState } from "react";
-const HomeContent = () => {
+const HomeContent = ({
+  scrollToContactUs,
+}: {
+  scrollToContactUs: () => void;
+}) => {
   const [width, setWindowWidth] = useState(0);
   useEffect(() => {
     updateDimensions();
@@ -17,7 +21,7 @@ const HomeContent = () => {
     setWindowWidth(width);
   };
   return (
-    <div className={styles.homeWrapper}>
+    <div className={styles.homeWrapper} id="home">
       <div className={styles.mainSection}>
         <div className={styles.descriptionWrapper}>
           <span className={styles.title}>
@@ -35,7 +39,7 @@ const HomeContent = () => {
           <Button
             style={styles.button}
             text="SCHEDULE A DEMO"
-            action={() => console.log("Schedule a Demo")}
+            action={() => scrollToContactUs()}
           />
         </div>
         <VideoContainer width={width} />

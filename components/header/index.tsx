@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import Button from "../button";
 // import Logo from '../../public/images/logo.png'
 import styles from "./index.module.scss";
-const Header = () => {
+const Header = ({ scrollToContactUs }: { scrollToContactUs: () => void }) => {
   const [width, setWindowWidth] = useState(0);
   const [menu, setMenuStatus] = useState(false);
   const [header, setHeaderStatus] = useState(true);
@@ -99,7 +99,9 @@ const Header = () => {
           <Button
             style={styles.contactButton}
             text="CONTACT US"
-            action={() => console.log("CONTACTS")}
+            action={() => {
+              scrollToContactUs();
+            }}
           />
         ) : null}
       </div>

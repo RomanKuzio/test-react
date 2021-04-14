@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Button from "../../../components/button";
 import { IServiceProps } from "../../../constants";
 import styles from "../index.module.scss";
@@ -10,13 +10,28 @@ interface IProps {
   reverse?: boolean;
   index: number;
   width: number;
+  openModal: () => void;
 }
 
-const ServiceContainer = ({ service, reverse, index, width }) => {
-  const { logo, title, description, additionalData, bottomSection } = service;
+const ServiceContainer = ({
+  service,
+  reverse,
+  index,
+  width,
+  openModal,
+}: IProps) => {
+  const {
+    logo,
+    title,
+    description,
+    additionalData,
+    additionalData2,
+    bottomSection,
+  } = service;
   const [full, setFull] = useState(false);
+  const [position, setPosition] = useState(0);
   const [showOverflow, setShowOverflow] = useState(true);
-
+  const ref = useRef(null);
   const hideShadow = () => {
     setTimeout(() => setShowOverflow(!showOverflow), 100);
   };
@@ -39,6 +54,7 @@ const ServiceContainer = ({ service, reverse, index, width }) => {
               data={item}
               width={width}
               small
+              marginBottom={index == 0 ? 45 : 15}
               key={index}
               squareWidth={width > 680 ? "23%" : "18%"}
             />
@@ -68,7 +84,6 @@ const ServiceContainer = ({ service, reverse, index, width }) => {
       >
         <img
           onClick={() => {
-            console.log("SET FULL");
             setFull(!full);
             hideShadow();
           }}
@@ -77,6 +92,28 @@ const ServiceContainer = ({ service, reverse, index, width }) => {
       </div>
     );
   };
+
+  const renderSquareScrollButton = ({ left }: { left: boolean }) => (
+    <div
+      className={classNames(
+        !left ? styles.shadowSquare : styles.shadowSquareLeft
+      )}
+      style={{ justifyContent: !left ? "flex-end" : "flex-start" }}
+    >
+      <img
+        onClick={() => {
+          if (left) {
+            ref.current.scrollLeft = ref.current.scrollLeft + 347;
+            setPosition(position + 1);
+          } else {
+            ref.current.scrollLeft = ref.current.scrollLeft - 347;
+            setPosition(position - 1);
+          }
+        }}
+        src="images/arrowDown.png"
+      />
+    </div>
+  );
 
   const buildRows = () => {
     return (
@@ -98,6 +135,35 @@ const ServiceContainer = ({ service, reverse, index, width }) => {
             ))}
           </div>
           {renderShowMoreSection()}
+        </div>
+      )
+    );
+  };
+
+  const buildHorizontalSquares = () => {
+    return (
+      additionalData &&
+      index === 4 && (
+        <div style={{ position: "relative" }}>
+          <div className={styles.horizontalSquaresWrapper} ref={ref}>
+            {additionalData2.map((item, index) => {
+              return (
+                <div className={styles.horizontalSquares}>
+                  {item.map((data, index) => (
+                    <SquareBlock
+                      width={width}
+                      key={index}
+                      horizontal
+                      data={data}
+                      squareWidth={347}
+                    />
+                  ))}
+                </div>
+              );
+            })}
+          </div>
+          {/* {position !== 3 && renderSquareScrollButton({ left: false })}
+          {position !== 0 && renderSquareScrollButton({ left: true })} */}
         </div>
       )
     );
@@ -128,6 +194,50 @@ const ServiceContainer = ({ service, reverse, index, width }) => {
       )
     );
   };
+
+  if (index == 4) {
+    return (
+      <div className={styles.serviceWrapper}>
+        <div className={styles.centerTitleWrapper}>
+          <span className={styles.title}>{title}</span>
+          <span
+            className={styles.description}
+            style={
+              width > 680
+                ? {
+                    margin: "3.125rem 0 4.375rem",
+                    textAlign: "center",
+                  }
+                : null
+            }
+          >
+            {description}
+          </span>
+        </div>
+        <div className={styles.mainSection} style={{ paddingRight: "10%" }}>
+          <div className={styles.logoWrapper}>
+            <img className={styles.logo} src={logo}></img>
+          </div>
+          <div className={styles.descriptionWrapper} style={{ width: "50%" }}>
+            {width > 1024 ? buildHorizontalSquares() : buildRows()}
+
+            <div
+              style={{
+                marginTop: full ? 50 : 0,
+                transition: "margin-top 0.5s ease-in",
+              }}
+            >
+              <Button
+                style={styles.button}
+                text="REQUEST A SERVICE"
+                action={openModal}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -173,6 +283,7 @@ const ServiceContainer = ({ service, reverse, index, width }) => {
           </span>
           {renderHelperBlock()}
           {buildSquares()}
+          {buildHorizontalSquares()}
           {buildRows()}
           <div
             style={{
@@ -183,7 +294,7 @@ const ServiceContainer = ({ service, reverse, index, width }) => {
             <Button
               style={styles.button}
               text="REQUEST A SERVICE"
-              action={() => console.log("REQUEST")}
+              action={openModal}
             />
           </div>
         </div>

@@ -5,19 +5,32 @@ const SquareBlock = ({
   small = false,
   width,
   squareWidth = 245,
+  horizontal = false,
+  marginBottom = 15,
 }: {
   data: string;
   small?: boolean;
+  marginBottom?: number;
   width: number;
   squareWidth?: number | string;
+  horizontal?: boolean;
 }) => {
-  console.log(squareWidth);
   return (
     <div
       className={styles.squareBlockWrapper}
       style={{
         marginRight: small ? (width < 680 ? 8 : 15) : 0,
-        height: small ? (width < 680 ? 150 : 200) : width < 680 ? 150 : 168,
+        marginBottom: marginBottom,
+        minWidth: horizontal ? 347 : 240,
+        height: small
+          ? width < 680
+            ? 150
+            : 200
+          : width < 680
+          ? 150
+          : horizontal
+          ? 172
+          : 168,
         width: squareWidth,
       }}
     >
