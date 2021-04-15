@@ -79,7 +79,7 @@ export const servicesList: IServiceProps[] = [
   {
     logo: "images/services/5.png",
     description:
-      "Our violation removal specialists are highly skilled professionals who represent our clients for violations issued by\nthe DOB, FDNY, DSNY, DOT, NYPD, DEP, DOH, DOHMH, Landmark Preservation and HPD agencies.",
+      "Our violation removal specialists are highly skilled professionals who represent our clients for violations issued by the DOB, FDNY, DSNY, DOT, NYPD, DEP, DOH, DOHMH, Landmark Preservation and HPD agencies.",
     title: "Violations",
     additionalData: [
       "OATH Hearing appearances on ECB violations",

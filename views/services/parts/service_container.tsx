@@ -79,6 +79,7 @@ const ServiceContainer = ({
       <div
         style={{
           display: width > 680 || index == 1 || index == 4 ? "flex" : "none",
+          bottom: !full ? (index == 1 ? "33px" : "0px") : null,
         }}
         className={classNames(styles.shadow, full && styles.shadowFull)}
       >
@@ -98,16 +99,32 @@ const ServiceContainer = ({
       className={classNames(
         !left ? styles.shadowSquare : styles.shadowSquareLeft
       )}
-      style={{ justifyContent: !left ? "flex-end" : "flex-start" }}
+      style={{
+        background:
+          left && position !== 3
+            ? "transparent"
+            : `linear-gradient(${
+                left ? "90deg" : "270deg"
+              }, #ffffff 0%, rgba(255, 255, 255, 0) 93.01%)`,
+        justifyContent: !left ? "flex-end" : "flex-start",
+      }}
     >
       <img
         onClick={() => {
-          if (left) {
-            ref.current.scrollLeft = ref.current.scrollLeft + 347;
-            setPosition(position + 1);
+          if (!left) {
+            console.log("1");
+            if (position !== 3) {
+              console.log("2");
+              ref.current.scrollLeft = ref.current.scrollLeft + 347;
+              setPosition(position + 1);
+            }
           } else {
-            ref.current.scrollLeft = ref.current.scrollLeft - 347;
-            setPosition(position - 1);
+            console.log("3");
+            if (position !== 0) {
+              console.log("4");
+              ref.current.scrollLeft = ref.current.scrollLeft - 347;
+              setPosition(position - 1);
+            }
           }
         }}
         src="images/arrowDown.png"
@@ -144,7 +161,12 @@ const ServiceContainer = ({
     return (
       additionalData &&
       index === 4 && (
-        <div style={{ position: "relative" }}>
+        <div
+          style={{
+            position: "relative",
+            boxShadow: "rgb(49 56 91 / 2%) -22px 9px 5px -5px",
+          }}
+        >
           <div className={styles.horizontalSquaresWrapper} ref={ref}>
             {additionalData2.map((item, index) => {
               return (
@@ -162,8 +184,8 @@ const ServiceContainer = ({
               );
             })}
           </div>
-          {/* {position !== 3 && renderSquareScrollButton({ left: false })}
-          {position !== 0 && renderSquareScrollButton({ left: true })} */}
+          {position !== 3 && renderSquareScrollButton({ left: false })}
+          {position !== 0 && renderSquareScrollButton({ left: true })}
         </div>
       )
     );
@@ -197,7 +219,14 @@ const ServiceContainer = ({
 
   if (index == 4) {
     return (
-      <div className={styles.serviceWrapper}>
+      <div
+        className={styles.serviceWrapper}
+        style={{
+          alignItems: "center",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         <div className={styles.centerTitleWrapper}>
           <span className={styles.title}>{title}</span>
           <span
@@ -214,11 +243,25 @@ const ServiceContainer = ({
             {description}
           </span>
         </div>
-        <div className={styles.mainSection} style={{ paddingRight: "10%" }}>
+        <div
+          className={styles.mainSection}
+          style={{
+            paddingRight: "10%",
+
+            flexDirection:
+              width > 680 ? (reverse ? "row-reverse" : "row") : "column",
+          }}
+        >
           <div className={styles.logoWrapper}>
             <img className={styles.logo} src={logo}></img>
           </div>
-          <div className={styles.descriptionWrapper} style={{ width: "50%" }}>
+          <div
+            className={styles.descriptionWrapper}
+            style={{
+              width: width > 680 ? "50%" : "100%",
+              paddingLeft: width < 680 ? "10%" : 0,
+            }}
+          >
             {width > 1024 ? buildHorizontalSquares() : buildRows()}
 
             <div
@@ -238,7 +281,7 @@ const ServiceContainer = ({
       </div>
     );
   }
-
+  console.log("POS", position);
   return (
     <div
       className={styles.serviceWrapper}

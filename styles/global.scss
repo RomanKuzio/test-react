@@ -48,6 +48,14 @@ button {
   &:focus {
     outline: none;
   }
+
+  &:disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    outline: none;
+    border: none;
+  }
 }
 @media screen and (min-width: 2400px) {
   html {

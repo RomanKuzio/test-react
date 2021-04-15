@@ -86,64 +86,59 @@ const ContactUsForm = () => {
           e.preventDefault();
         }}
       >
-        <div style={{ width: "49%" }}>
-          <Input
-            name="name"
-            title="Name"
-            placeholder="E.g. John Anderson"
-            onChange={(e) => {
-              setName(e.target.value), validateField("Name", e.target.value);
-            }}
-          />
-        </div>
-        <div style={{ width: "49%" }}>
-          <Input
-            name="email"
-            title="Email"
-            placeholder="E.g. john.anderson@example.com"
-            onChange={(e) => {
-              setEmail(e.target.value);
-              validateField("Email", e.target.value);
-            }}
-          />
-        </div>
-        <div style={{ width: "49%" }}>
-          <Dropdown
-            title={`I'm interested in`}
-            placeholder="Choose subject"
-            onChange={(e) => {
-              setSubject(e.target.value);
-              validateField("Subject", e.target.value);
-            }}
-          />
-        </div>
-        <div style={{ width: "49%" }}>
-          <Input
-            name="phone_number"
-            title="Phone number"
-            placeholder="E.g. (212) 555-555"
-            onChange={(e) => {
-              var x = e.target.value
-                .replace(/\D/g, "")
-                .match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
-              e.target.value = !x[2]
-                ? x[1]
-                : "(" + x[1] + ") " + x[2] + (x[3] ? "-" + x[3] : "");
-              setPhoneNumber(e.target.value);
-              validateField("Phone number", e.target.value);
-            }}
-          />
-        </div>
-        <div style={{ width: "100%" }}>
-          <TextArea
-            title="Message"
-            placeholder="Enter your message"
-            onChange={(e) => {
-              setMessage(e.target.value);
-              validateField("Message", e.target.value);
-            }}
-          />
-        </div>
+        <Input
+          name="name"
+          title="Name"
+          placeholder="E.g. John Anderson"
+          onChange={(e) => {
+            setName(e.target.value), validateField("Name", e.target.value);
+          }}
+        />
+
+        <Input
+          name="email"
+          title="Email"
+          placeholder="E.g. john.anderson@example.com"
+          onChange={(e) => {
+            setEmail(e.target.value);
+            validateField("Email", e.target.value);
+          }}
+        />
+
+        <Dropdown
+          title={`I'm interested in`}
+          placeholder="Choose subject"
+          onChange={(e) => {
+            setSubject(e.target.value);
+            validateField("Subject", e.target.value);
+          }}
+        />
+
+        <Input
+          name="phone_number"
+          title="Phone number"
+          placeholder="E.g. (212) 555-555"
+          onChange={(e) => {
+            var x = e.target.value
+              .replace(/\D/g, "")
+              .match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+            e.target.value = !x[2]
+              ? x[1]
+              : "(" + x[1] + ") " + x[2] + (x[3] ? "-" + x[3] : "");
+            setPhoneNumber(e.target.value);
+            validateField("Phone number", e.target.value);
+          }}
+        />
+
+        <TextArea
+          title="Message"
+          placeholder="Enter your message"
+          onChange={(e) => {
+            setMessage(e.target.value);
+            validateField("Message", e.target.value);
+          }}
+        />
+
         <Button
           text="SEND"
           style={styles.button}

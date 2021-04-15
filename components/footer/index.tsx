@@ -41,7 +41,7 @@ const Footer = ({ scrollToContactUs }: { scrollToContactUs: () => void }) => {
           </div>
         </div>
       </div>
-      {width < 662 ? (
+      {width < 680 ? (
         <div className={styles.infoWrapper}>
           {footerData.map((item, index) => (
             <details key={index} className={styles.info}>
