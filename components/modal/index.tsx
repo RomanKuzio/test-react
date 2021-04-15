@@ -14,7 +14,7 @@ const customStyles = {
     inset: "30px 70px",
     borderRadius: "16px",
   },
-  overlay: { zIndex: 10000 },
+  overlay: { zIndex: 10000, background: "rgba(0,0,0,0.4)" },
 };
 
 const customSmallStyles = {
