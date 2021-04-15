@@ -52,11 +52,10 @@
         flex-wrap: wrap;
         justify-content: space-between;
         align-content: flex-end;
-        > div {
-          .button {
-            margin-top: 2.875rem;
-            margin-left: auto;
-          }
+
+        .button {
+          margin-top: 2.875rem;
+          margin-left: auto;
         }
       }
     }
@@ -72,18 +71,32 @@
         width: 30%;
         height: 40%;
       }
+      .title {
+        font-size: 1.125rem;
+        color: #000e1c;
+        font-weight: 500;
+        line-height: 2.025rem;
+      }
       .infoWrapper {
         width: 100%;
         display: flex;
+        flex-direction: column;
         justify-content: space-around;
-        .infoBlock {
-          display: flex;
+        margin-left: 8rem;
 
-          flex-direction: column;
-          > span {
-            line-height: 1.7rem;
-            font-weight: 400;
-            color: #000e1c;
+        > div {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          .infoBlock {
+            display: flex;
+
+            flex-direction: column;
+            > span {
+              line-height: 1.7rem;
+              font-weight: 400;
+              color: #000e1c;
+            }
           }
         }
       }
@@ -124,6 +137,9 @@
 
       width: 90%;
       .locationWrapper {
+        .infoWrapper {
+          margin-left: 3rem;
+        }
         width: 93%;
       }
     }
@@ -160,14 +176,29 @@
           height: 160px;
         }
 
+        .title {
+          margin-bottom: 15px;
+        }
+
         .infoWrapper {
           margin-top: 25px;
-          width: 100%;
+
+          margin-left: 0rem;
           display: flex;
+
           justify-content: flex-start;
+
+          .addressWrapper {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+          }
+
           .infoBlock {
+            width: 100%;
+            flex-direction: column;
             &:last-of-type {
-              margin-left: 15%;
+              margin-top: 15px;
             }
           }
         }

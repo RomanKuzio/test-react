@@ -3,7 +3,11 @@ import styles from "./index.module.scss";
 import ProgressIndicator from "../../components/progress-bar";
 import { useState, useEffect } from "react";
 
-const VideoSectionContent = () => {
+const VideoSectionContent = ({
+  scrollToContactUs,
+}: {
+  scrollToContactUs: () => void;
+}) => {
   const [width, setWindowWidth] = useState(0);
   useEffect(() => {
     updateDimensions();
@@ -33,7 +37,7 @@ const VideoSectionContent = () => {
           <Button
             style={styles.button}
             text="CONTACT US"
-            action={() => console.log("CONTACT US")}
+            action={scrollToContactUs}
           ></Button>
           <div className={styles.indicatorsWrappers}>
             <ProgressIndicator

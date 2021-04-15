@@ -18,7 +18,7 @@ export default function Home() {
       <Header scrollToContactUs={scrollToContactUs} />
       <HomePage scrollToContactUs={scrollToContactUs} />
       <Services />
-      <VideoSectionContent />
+      <VideoSectionContent scrollToContactUs={scrollToContactUs} />
       <News />
       <ContactUs />
       <Footer scrollToContactUs={scrollToContactUs} />
